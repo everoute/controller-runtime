@@ -323,6 +323,7 @@ var _ = Describe("Internal", func() {
 				Expect(err).NotTo(HaveOccurred())
 				Expect(evt.Meta).To(Equal(m))
 				Expect(evt.Object).To(Equal(pod))
+				Expect(evt.DeleteStateUnknown).Should(BeTrue())
 			}
 
 			instance.OnDelete(tombstone)
