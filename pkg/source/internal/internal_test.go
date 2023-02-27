@@ -291,6 +291,7 @@ var _ = Describe("Internal", func() {
 				defer GinkgoRecover()
 				Expect(q).To(Equal(instance.Queue))
 				Expect(evt.Object).To(Equal(pod))
+				Expect(evt.DeleteStateUnknown).Should(BeTrue())
 			}
 
 			instance.OnDelete(tombstone)
